@@ -8,3 +8,6 @@ jar cf lib.jar com/example/util/Helper.class
 javac -cp lib.jar com/example/MainPlugin.java
 jar cf app.jar com/example/MainPlugin.class
 
+
+
+
