@@ -1,0 +1,4 @@
+# Key=接口全类名，Value=实现类全类名（多个用逗号分隔）
+com.hsin.spi.Logger=com.hsin.provider.ConsoleLogger,com.hsin.provider.FileLogger
+# 其他 Key（用于验证精准性，不会被加载）
+com.hsin.spi.StorageService=com.hsin.LocalStorageService
