@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo</module>
-        <module>spi</module>
-        <module>spring</module>
+        <module>classloader-spi</module>
+        <module>classloader-spring</module>
     </modules>
 
     <properties>
