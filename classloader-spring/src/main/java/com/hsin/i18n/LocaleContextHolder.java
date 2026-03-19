@@ -12,7 +12,7 @@ public class LocaleContextHolder {
 
     public static Locale getLocale() {
         Locale locale = currentLocale.get();
-        return locale != null ? locale : new Locale("zh", "CN");
+        return locale != null ? locale : Locale.getDefault();
     }
 
     public static void clear() {
