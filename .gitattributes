@@ -1,0 +1,27 @@
+# 设置默认行为，让 Git 自动检测文本文件并规范化
+* text=auto eol=lf
+
+# 针对 properties 文件
+*.properties text eol=lf
+
+# 推荐同时也配置其他常见的配置文件
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# 强制指定某些文本文件使用 LF
+*.sh text eol=lf
+*.js text eol=lf
+*.java text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+
+# 强制指定某些文件使用 CRLF（例如 Windows 的批处理脚本）
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 将所有二进制文件（如图片）明确标记，禁止 Git 对其进行任何转换
+*.png binary
+*.jpg binary
+*.ico binary
+
