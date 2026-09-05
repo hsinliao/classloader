@@ -1,0 +1,4 @@
+{
+  "id": "broken-json",
+  "name": "this file is deliberately malformed JSON:
+  "version": "1.0.0",

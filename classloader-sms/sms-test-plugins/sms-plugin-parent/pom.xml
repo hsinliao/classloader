@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.hsin</groupId>
+        <artifactId>sms-test-plugins</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <artifactId>sms-plugin-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>sms-plugin-parent</name>
+    <description>
+        Parent of plugin modules. Stages each plugin as:
+        target/plugin/plugin.json + target/plugin/plugin.jar + target/plugin/lib/*.jar.
+        SPI/SDK artifacts are never bundled into plugin lib.
+    </description>
+
+    <modules>
+        <module>plugin-a</module>
+        <module>plugin-b</module>
+        <module>plugin-conflict</module>
+        <module>plugin-slow</module>
+        <module>plugin-threads</module>
+        <module>plugin-resources</module>
+        <module>broken-main-missing</module>
+        <module>broken-spi-missing</module>
+        <module>broken-json</module>
+        <module>broken-spi-version</module>
+        <module>broken-missing-dep</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/plugin</outputDirectory>
+                    <finalName>plugin</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-plugin-libs</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/plugin/lib</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                            <excludeGroupIds>com.hsin</excludeGroupIds>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>stage-plugin-directory</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/plugin</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/plugin</directory>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

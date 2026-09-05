@@ -1,0 +1,9 @@
+{
+  "id": "broken-missing-dep",
+  "name": "broken-missing-dep",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.broken.MissingDependencyProvider",
+  "spiVersion": "1.0",
+  "requiresJava": "17"
+}

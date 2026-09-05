@@ -1,0 +1,9 @@
+{
+  "id": "plugin-threads",
+  "name": "thread-owning-provider",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.threads.ThreadsProvider",
+  "spiVersion": "1.0",
+  "requiresJava": "17"
+}

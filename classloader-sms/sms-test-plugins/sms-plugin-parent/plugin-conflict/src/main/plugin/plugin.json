@@ -1,0 +1,9 @@
+{
+  "id": "plugin-conflict",
+  "name": "conflict-scenario-provider",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.conflict.ConflictPluginProvider",
+  "spiVersion": "1.0",
+  "requiresJava": "17"
+}

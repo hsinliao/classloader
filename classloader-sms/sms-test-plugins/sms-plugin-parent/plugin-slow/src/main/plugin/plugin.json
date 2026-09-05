@@ -1,0 +1,9 @@
+{
+  "id": "plugin-slow",
+  "name": "slow-provider",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.slow.SlowProvider",
+  "spiVersion": "1.0",
+  "requiresJava": "17"
+}

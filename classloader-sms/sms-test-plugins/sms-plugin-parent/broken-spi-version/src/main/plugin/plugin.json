@@ -1,0 +1,9 @@
+{
+  "id": "broken-spi-version",
+  "name": "broken-spi-version",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.broken.SpiVersionTooNewProvider",
+  "spiVersion": "9.0",
+  "requiresJava": "17"
+}

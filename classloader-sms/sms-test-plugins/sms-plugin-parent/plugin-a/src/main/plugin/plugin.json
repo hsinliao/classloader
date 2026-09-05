@@ -1,0 +1,9 @@
+{
+  "id": "plugin-a",
+  "name": "demo-plugin-a",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.demo.PluginAProvider",
+  "spiVersion": "1.0",
+  "requiresJava": "17"
+}

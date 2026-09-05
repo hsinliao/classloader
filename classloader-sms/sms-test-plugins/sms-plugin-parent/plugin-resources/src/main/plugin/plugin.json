@@ -1,0 +1,9 @@
+{
+  "id": "plugin-resources",
+  "name": "resource-owning-provider",
+  "version": "1.0.0",
+  "vendor": "example-vendor",
+  "mainClass": "com.hsin.sms.plugins.resources.ResourceProvider",
+  "spiVersion": "1.0",
+  "requiresJava": "17"
+}
